@@ -15,3 +15,19 @@ export async function getUsers(req: Request, res: Response) {
     return;
   }
 }
+export async function deleteUser(req: Request, res: Response) {
+  const id = Number(req.params.id);
+
+  try {
+    await prisma.user.delete({
+      where: {
+        id,
+      },
+    });
+
+    res.status(201);
+  } catch (error) {
+    res.status(500).json({ message: `Server error: ${error}` });
+    return;
+  }
+}
