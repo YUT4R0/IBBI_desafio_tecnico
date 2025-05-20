@@ -147,6 +147,7 @@ export function UsersPage() {
             onClick={() => {
               setisModalOpen(true);
             }}
+            title="Cadastrar usuário"
           >
             Novo Usuário
           </Button>
@@ -189,7 +190,8 @@ export function UsersPage() {
                             setUser(user);
                             setisModalOpen(true);
                           }}
-                          className="bg-cyan-700 size-8 rounded-sm flex items-center justify-center cursor-pointer"
+                          className="bg-cyan-600 hover:brightness-75 transition-all size-8 rounded-sm flex items-center justify-center cursor-pointer"
+                          title="Editar usuário"
                         >
                           <Pencil size={24} color="white" />
                         </button>
@@ -198,7 +200,8 @@ export function UsersPage() {
                             setUser(user);
                             setIsDeletionModalOpen(true);
                           }}
-                          className="bg-red-700 size-8 rounded-sm flex items-center justify-center cursor-pointer"
+                          className="bg-red-600 hover:brightness-75 transition-all size-8 rounded-sm flex items-center justify-center cursor-pointer"
+                          title="Excluir usuário"
                         >
                           <Trash size={24} color="white" />
                         </button>
@@ -228,8 +231,8 @@ export function UsersPage() {
       <Dialog open={isModalOpen} onOpenChange={setisModalOpen}>
         <DialogContent className="w-1/3 flex flex-col items-center max-h-[90vh] gap-0 py-0 overflow-hidden px-4 border-0">
           <div className="relative w-full h-0" />
-          <div className="bg-cyan-400 w-full absolute h-12 flex items-center justify-between px-4 text-black font-bold text-lg">
-            <span className="mx-auto">
+          <div className="bg-cyan-400 w-full absolute h-12 flex items-center justify-between px-4 text-lg">
+            <span className="mx-auto font-semibold">
               {user ? "Atualizar Usuário" : "Cadastro de Usuário"}
             </span>
           </div>
@@ -289,7 +292,7 @@ export function UsersPage() {
                   <label className="text-base font-normal">Status:</label>
                   <select
                     {...register("status")}
-                    className="border-1 border-gray-500 p-0.5 rounded-md"
+                    className="border-1 border-gray-500 hover:border-gray-900 cursor-pointer transition-all p-0.5 rounded-md"
                     defaultValue={"ativo"}
                   >
                     <option className="" value="ativo">
@@ -304,7 +307,7 @@ export function UsersPage() {
                   <Button
                     type="button"
                     variant={"destructive"}
-                    className="border rounded-md mt-4 text-md"
+                    className="border rounded-md mt-4 text-md hover:brightness-75 transition-all"
                     onClick={() => setisModalOpen(false)}
                   >
                     Cancelar
@@ -312,9 +315,9 @@ export function UsersPage() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="border text-white bg-cyan-700 rounded-md mt-4 text-md"
+                    className="border text-white bg-green-600 rounded-md mt-4 text-md"
                   >
-                    {user ? "Atualizar" : "Cadastrar"} usuário
+                    Salvar
                   </Button>
                 </div>
               </div>
