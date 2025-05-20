@@ -31,7 +31,7 @@ export async function createUser(req: Request, res: Response) {
       data,
     });
 
-    res.status(201).json({ message: "User updated successfully!" });
+    res.status(201).json({ message: "User creatred successfully!" });
   } catch (error) {
     res.status(500).json({ message: `Server error: ${error}` });
     return;
@@ -66,7 +66,7 @@ export async function deleteUser(req: Request, res: Response) {
       },
     });
 
-    res.status(201).json({ message: "User updated successfully!" });
+    res.status(201).json({ message: "User deleted successfully!" });
   } catch (error) {
     res.status(500).json({ message: `Server error: ${error}` });
     return;

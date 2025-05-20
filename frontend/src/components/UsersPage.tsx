@@ -300,13 +300,23 @@ export function UsersPage() {
                     </option>
                   </select>
                 </div>
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="border text-white bg-cyan-700 rounded-md mt-4 text-md"
-                >
-                  {user ? "Atualizar" : "Cadastrar"} usuário
-                </Button>
+                <div className="flex w-full items-center justify-between">
+                  <Button
+                    type="button"
+                    variant={"destructive"}
+                    className="border rounded-md mt-4 text-md"
+                    onClick={() => setisModalOpen(false)}
+                  >
+                    Cancelar
+                  </Button>
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="border text-white bg-cyan-700 rounded-md mt-4 text-md"
+                  >
+                    {user ? "Atualizar" : "Cadastrar"} usuário
+                  </Button>
+                </div>
               </div>
             </form>
           </div>
