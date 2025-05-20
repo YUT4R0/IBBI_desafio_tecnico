@@ -22,8 +22,8 @@ Este projeto é uma solução fullstack (baseada em HTML, CSS e Javascript/Types
 ### Frontend
 - React.js
 - Axios (para comunicação com a API)
-- React Router (para navegação)
-- CSS (Tailwindcss + Shadcn)
+- Shadcn (para esqueleto de componentes Javascript)
+- CSS (Tailwindcss)
 
 ### Backend
 - Node.js
@@ -36,7 +36,7 @@ Este projeto é uma solução fullstack (baseada em HTML, CSS e Javascript/Types
 ### Pré-requisitos
 
 - Node.js (versão 22)
-- npm ou yarn
+- npm ou yarn (versão 10)
 - Git (opcional)
 
 ### Passo a Passo
@@ -103,14 +103,14 @@ model User {
 
 A aplicação possui apenas uma tela:
 
-1. **Lista de Usuários**:
-   - Exibe nome e e-mail dos usuários
+**Usuários cadstrados na plataforma**:
+   - Exibe nome, e-mail e status dos usuários
    - Botões para editar e excluir
-   - Botão "Novo" para adicionar usuários
+   - Botão "Novo Usuário" para adicionar usuários
 
 A tela que ficaria responsável tanto para criação quanto para edição de usuários foi otimizada para ser apenas modal responsivo:
 
-2. **Formulário de Cadastro/Edição**:
+**Formulário de Cadastro/Edição**:
    - Campos para nome (150 caracteres), e-mail (20 caracteres), senha (8 caracteres) e status (Ativo/Excluído)
    - Validações em tempo real
    - Botão para salvar ou cancelar
