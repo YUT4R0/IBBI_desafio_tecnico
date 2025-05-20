@@ -9,11 +9,11 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import "@/index.css";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Pencil, Trash } from "lucide-react";
 import { useEffect, useState } from "react";
-
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, type SubmitHandler } from "react-hook-form";
+import toast from "react-hot-toast";
 import { z } from "zod";
 
 type UserProps = {
@@ -72,6 +72,7 @@ export function UsersPage() {
         setUsers((prev) => prev.filter((u) => u.id !== user.id));
         setIsDeletionModalOpen(false);
         setUser(null);
+        toast.success("Usuário excluído com sucesso!");
       }
     } catch (error) {
       console.error("Some error ocurred: ", error);
@@ -85,6 +86,7 @@ export function UsersPage() {
         setisModalOpen(false);
         reset();
         fetchUsers();
+        toast.success("Usuário cadastrado com sucesso!");
       }
     } catch (error) {
       console.error(error);
@@ -99,6 +101,7 @@ export function UsersPage() {
         setisModalOpen(false);
         reset();
         fetchUsers();
+        toast.success("Usuário atualizado com sucesso!");
       }
     } catch (error) {
       console.error(error);
