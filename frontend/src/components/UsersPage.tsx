@@ -43,6 +43,7 @@ export function UsersPage() {
   const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
   const [isDeletionModalOpen, setIsDeletionModalOpen] = useState(false);
   const [user, setUser] = useState<UserProps | null>(null);
+  const [isButtonLoading, setIsButtonLoading] = useState(false);
 
   const {
     register,
@@ -66,6 +67,7 @@ export function UsersPage() {
   };
 
   const handleDeleteUser = async (user: UserProps) => {
+    setIsButtonLoading(true);
     try {
       const { status } = await api.delete(`/users/${user.id}`);
       if (status === 201) {
@@ -76,6 +78,8 @@ export function UsersPage() {
       }
     } catch (error) {
       console.error("Some error ocurred: ", error);
+    } finally {
+      setIsButtonLoading(false);
     }
   };
 
@@ -317,7 +321,7 @@ export function UsersPage() {
                     disabled={isSubmitting}
                     className="border text-white bg-green-600 rounded-md mt-4 text-md"
                   >
-                    Salvar
+                    {isSubmitting ? "Salvando..." : "Salvar"}
                   </Button>
                 </div>
               </div>
@@ -343,8 +347,9 @@ export function UsersPage() {
                 if (user) handleDeleteUser(user);
               }}
               variant={"destructive"}
+              disabled={isButtonLoading}
             >
-              Excluir
+              {isButtonLoading ? "Excluindo..." : "Excluir"}
             </Button>
           </DialogFooter>
         </DialogContent>
