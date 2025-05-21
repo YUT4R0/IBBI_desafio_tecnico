@@ -6,14 +6,12 @@ import { routes } from "./routes";
 dotenv.config();
 
 const PORT = process.env.PORT || 3333;
-const domain = process.env.DOMAIN;
 
 const app = express();
 
 const corsSettings = {
   origin: "*",
   allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true,
   methods: "*",
 };
 
@@ -24,5 +22,5 @@ app.use(express.json());
 app.use(routes);
 
 app.listen(PORT, () => {
-  console.log(`Server running at http://${domain}:${PORT}`);
+  console.log(`Server running on port ${PORT}!`);
 });
