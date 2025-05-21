@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "tsx watch --env-file .env src/server.ts",
-    "build": "npm install && npx prisma generate && tsc",
-    "start": "node --env-file=.env ./dist/server.js"
+    "build": "rm -rf dist && tsc && prisma generate",
+    "start": "node --env-file .env ./dist/server.js"
   },
   "dependencies": {
     "@prisma/client": "^5.10.2",
