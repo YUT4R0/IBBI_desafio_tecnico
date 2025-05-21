@@ -2,5 +2,5 @@
 npm install
 npx prisma generate
 npx tsc
-mkdir -p build/prisma 
-cp -r prisma/dev.db build/prisma/
+mkdir -p /var/lib/render/project/volume/data
+cp prisma/dev.db /var/lib/render/project/volume/data/a/

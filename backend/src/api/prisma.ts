@@ -1,18 +1,18 @@
 import { PrismaClient } from "@prisma/client";
 
 // ENVIRONMENT
-// const prisma = new PrismaClient({
-//   log: ["query"],
-//   //... other configuration
-// });
+const prisma = new PrismaClient({
+  log: ["query"],
+  //... other configuration
+});
 
 // PRODUCTION
-const prisma = new PrismaClient({
-  datasources: {
-    db: {
-      url: process.env.PROD_DATABASE_URL || "file:./prisma/prod.db",
-    },
-  },
-});
+// const prisma = new PrismaClient({
+//   datasources: {
+//     db: {
+//       url: process.env.PROD_DATABASE_URL || "file:./prisma/prod.db",
+//     },
+//   },
+// });
 
 export { prisma };
