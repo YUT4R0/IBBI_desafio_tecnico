@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "tsx watch --env-file .env src/server.ts",
-    "build": "rm -rf dist && tsc && prisma generate",
+    "build": "rm -rf build && tsc && mkdir -p build/prisma && cp prisma/dev.db build/prisma/",
     "start": "node --env-file .env ./dist/server.js"
   },
   "dependencies": {
