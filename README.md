@@ -8,6 +8,11 @@ Este projeto é uma solução fullstack (baseada em HTML, CSS e Javascript/Types
 - **Backend**: Node.js com Express
 - **Banco de Dados**: SQLite com Prisma ORM
 
+## 🔎 Como Acessar o Projeto
+O projeto pode ser tanto utilizdo localmente (requer configurações adicionais) quato publicamente, uma vez que a aplicação está hospedada em:
+- **Frontend**: Hospedado na Vercel.com (plano gratuito) como um SPA;
+- **Backend**: Api e Banco (Sqlite - in-memory) de dados hospedados na Render.com (plano gratuito);
+
 ## Funcionalidades
 
 - 📋 Listagem de usuários cadastrados
